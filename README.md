@@ -12,7 +12,7 @@ This repo contains all of the assignments from the Columbia University FinTech c
 * Python - [02_python](https://github.com/illyanyc/cu_fintech_assignments/tree/main/02_python)
 * Pandas - [03_pandas](https://github.com/illyanyc/cu_fintech_assignments/tree/main/03_pandas)
 * APIs - [04_apis](https://github.com/illyanyc/cu_fintech_assignments/tree/main/04_apis)
-* PyViz - [06_pyviz](https://github.com/illyanyc/cu_fintech_assignments/tree/main/06_piviz)
+* PyViz - [06_py_viz](https://github.com/illyanyc/cu_fintech_assignments/tree/main/06_py_viz)
 
 
 ---
