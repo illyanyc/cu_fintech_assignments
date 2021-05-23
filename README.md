@@ -16,6 +16,6 @@ This repo contains all of the assignments from the Columbia University FinTech c
 
 
 ---
-[Illya Nayshevsky, Ph.D.](illya.n@me.com) [<img src="https://cdn2.auth0.com/docs/media/connections/linkedin.png" alt="LinkedIn -  Illya Nayshevsky" style="float: right" width=25/>](https://www.linkedin.com/in/illyanayshevskyy/)
+[Illya Nayshevsky, Ph.D.](illya.n@me.com) <br>
 
-2021
+[<img src="https://cdn2.auth0.com/docs/media/connections/linkedin.png" alt="LinkedIn -  Illya Nayshevsky" width=25/>](https://www.linkedin.com/in/illyanayshevskyy/)
