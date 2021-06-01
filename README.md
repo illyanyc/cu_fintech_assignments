@@ -1,4 +1,7 @@
-# CU Fintech Assignments
+![header](https://capsule-render.vercel.app/api?type=waving&color=timeAuto&width=1000&height=100&section=header&text=Columbia%20University%20FinTech%20Bootcamp%20Assignments&fontSize=30&fontColor=black)
+
+<!--- the header is made with: https://github.com/kyechan99/capsule-render -->
+
 This repo contains all of the assignments from the [Columbia University FinTech class](https://bootcamp.cvn.columbia.edu/fintech/).
 
 ---
