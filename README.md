@@ -1,5 +1,5 @@
-# Cu Fintech Assignments
-This repo contains all of the assignments from the Columbia University FinTech class.
+# CU Fintech Assignments
+This repo contains all of the assignments from the [Columbia University FinTech class](https://bootcamp.cvn.columbia.edu/fintech/).
 
 ---
 
