@@ -11,16 +11,21 @@ Columbia FinTech Bootcamp Assignment
 
 ---
 ## Abstract
-Time Series Forecasting and Regression Analysis were performed on [Japanese Yen](https://en.wikipedia.org/wiki/Japanese_yen) (¥) dataset. Time series forecasting utilized the [Hodrick-Prescott Filter](https://en.wikipedia.org/wiki/Hodrick%E2%80%93Prescott_filter) methods, [Agressive-moving-average](https://en.wikipedia.org/wiki/Autoregressive%E2%80%93moving-average_model) (ARMA), [Autoregressive integrated moving average](https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average) (ARIMA) and [Generalized AutoRegressive Conditional Heteroskedasticity](https://www.investopedia.com/terms/g/garch.asp) (GARCH) methodologies. 
+Time Series Forecasting and Regression Analysis were performed on [Japanese Yen](https://en.wikipedia.org/wiki/Japanese_yen) (¥) dataset. Time series forecasting utilized the [Hodrick-Prescott Filter](https://en.wikipedia.org/wiki/Hodrick%E2%80%93Prescott_filter) methods, [Agressive-moving-average](https://en.wikipedia.org/wiki/Autoregressive%E2%80%93moving-average_model) (ARMA), [Autoregressive integrated moving average](https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average) (ARIMA) and [Generalized AutoRegressive Conditional Heteroskedasticity](https://www.investopedia.com/terms/g/garch.asp) (GARCH) methodologies.
+
+
 
 
 ---
 ## Time Series Forecasting
 Time series analysis is a series of data points indexed in the time domain [[Wikipedia](https://en.wikipedia.org/wiki/Time_series)]. In this assignment, 4 additional forecasting methods are used:<br>
-* [Hodrick-Prescott Filter Decomposition]
+* [Hodrick-Prescott Filter Decomposition](#hodrick-prescott-filter-decomposition)
 * [ARMA Model Returns Forecasting]
 * [ARIMA Model Settle Price Forecasting]
 * [Forecasting Volatility with GARCH.]
+
+### Hodrick-Prescott Filter Decomposition
+
 
 
 ## Regression Analysis
