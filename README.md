@@ -8,14 +8,14 @@ This repo contains all of the assignments from the [Columbia University FinTech 
 
 #### Table of Contents
 
-*Assignment Name* - *{week_number}_repo_name*
-
-
-* Intro to Finance - [01_intro_to_finance](https://github.com/illyanyc/cu_fintech_assignments/tree/main/01_intro_to_finance)
-* Python - [02_python](https://github.com/illyanyc/cu_fintech_assignments/tree/main/02_python)
-* Pandas - [03_pandas](https://github.com/illyanyc/cu_fintech_assignments/tree/main/03_pandas)
-* APIs - [04_apis](https://github.com/illyanyc/cu_fintech_assignments/tree/main/04_apis)
-* PyViz - [06_py_viz](https://github.com/illyanyc/cu_fintech_assignments/tree/main/06_py_viz)
+| Class             | Repo Link                                                                                               |
+|-------------------|---------------------------------------------------------------------------------------------------------|
+| Intro to Finance  | [01_intro_to_finance](https://github.com/illyanyc/cu_fintech_assignments/tree/main/01_intro_to_finance) |
+| Python            | [02_python](https://github.com/illyanyc/cu_fintech_assignments/tree/main/02_python)                     |
+| Pandas            | [03_pandas](https://github.com/illyanyc/cu_fintech_assignments/tree/main/03_pandas)                     |
+| APIs              | [04_apis](https://github.com/illyanyc/cu_fintech_assignments/tree/main/04_apis)                         |
+| PyViz             | [06_py_viz](https://github.com/illyanyc/cu_fintech_assignments/tree/main/06_py_viz)                     |
+| Time-Series       | [07_time-series](https://github.com/illyanyc/cu_fintech_assignments/tree/main/10_time_series)           |
 
 
 ---
