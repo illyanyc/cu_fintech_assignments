@@ -48,7 +48,7 @@ Time series analysis is a series of data points indexed in the time domain [[Wik
 
 > *yt = τt + ct*
 
-The components are determined by minimizing a quadratic loss function described here: [Hodrick–Prescott filter : The Equation](https://www.mathworks.com/help/econ/hpfilter.html#:~:text=The%20Hodrick%2DPrescott%20filter%20decomposes,%3D%20%CF%84t%20%2B%20ct.&text=f%20(%20%CF%84%20t%20)%20%3D%20%E2%88%91,T%20is%20the%20sample%20size.)
+The components are determined by minimizing a quadratic loss function described here: [[Hodrick–Prescott filter : The Equation](https://www.mathworks.com/help/econ/hpfilter.html#:~:text=The%20Hodrick%2DPrescott%20filter%20decomposes,%3D%20%CF%84t%20%2B%20ct.&text=f%20(%20%CF%84%20t%20)%20%3D%20%E2%88%91,T%20is%20the%20sample%20size.)]
 
 #### Method
 The <code>statsmodel</code> library is imported:
@@ -74,7 +74,7 @@ However, no correlation was found between <code>Settle</code> price and <code>No
 
 ### ARMA Model Returns Forecasting
 #### Overview
-[Agressive-moving-average](https://en.wikipedia.org/wiki/Autoregressive%E2%80%93moving-average_model) (ARMA) is a corss between Auto-Regressive (*AR(p)*) and Moving Avereage (*MA(q)*) models. *AR(p)* model try to explain the momentum and mean reversion effects often observed in trading markets and uses past values to predict the future values and assumes some degree of [auto-correlation](https://en.wikipedia.org/wiki/Autocorrelation), while *MA(q)* models try capture the avarage smoothed average price by creating a series of averages of different subsets and creating a contantly updated average price. [[Time Series Analysis for Financial Data IV— ARMA Models - Medium](https://medium.com/auquan/time-series-analysis-for-finance-arma-models-21695e14c999#:~:text=ARMA%20model%20is%20simply%20the,in%20the%20white%20noise%20terms.)] ARMA model combines the *AR* and *MA* models to predict future values by analyzing past values and errors.
+[Agressive-moving-average](https://en.wikipedia.org/wiki/Autoregressive%E2%80%93moving-average_model) (ARMA) is a corss between Auto-Regressive (*AR(p)*) and Moving Avereage (*MA(q)*) models. *AR(p)* model try to explain the momentum and mean reversion effects often observed in trading markets and uses past values to predict the future values and assumes some degree of [auto-correlation](https://en.wikipedia.org/wiki/Autocorrelation), while *MA(q)* models try capture the avarage smoothed average price by creating a series of averages of different subsets and creating a contantly updated average price [[Time Series Analysis for Financial Data IV— ARMA Models - Medium](https://medium.com/auquan/time-series-analysis-for-finance-arma-models-21695e14c999#:~:text=ARMA%20model%20is%20simply%20the,in%20the%20white%20noise%20terms.)]. ARMA model combines the *AR* and *MA* models to predict future values by analyzing past values and errors.
 
 
 #### Method
@@ -142,7 +142,7 @@ The 5 day return forecast was then plotted:
 
 ### ARIMA Model Settle Price Forecasting
 #### Overview
-[Autoregressive integrated moving average](https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average) (ARIMA) is a natural extension to the class of ARMA models — it combines the *AR* and *MA* models, using past values and errors to predict future values. ARIMA model returns differences (*Δy*) of the data. [[Time Series Analysis for Financial Data V — ARIMA Models - Medium](https://medium.com/auquan/time-series-analysis-for-finance-arima-models-acb5e39999df)] ARIMA model includes [Akaika Information Criterion](https://en.wikipedia.org/wiki/Akaike_information_criterion) (AIC) and [Baysian Information Criterion](https://en.wikipedia.org/wiki/Bayesian_information_criterion) (BIC), which assess how well the model fits and the model's complexity. In general higher-order models are penalized for complexity, and lower scores within these indicators are better.
+[Autoregressive integrated moving average](https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average) (ARIMA) is a natural extension to the class of ARMA models — it combines the *AR* and *MA* models, using past values and errors to predict future values. ARIMA model returns differences (*Δy*) of the data [[Time Series Analysis for Financial Data V — ARIMA Models - Medium](https://medium.com/auquan/time-series-analysis-for-finance-arima-models-acb5e39999df)]. ARIMA model includes [Akaika Information Criterion](https://en.wikipedia.org/wiki/Akaike_information_criterion) (AIC) and [Baysian Information Criterion](https://en.wikipedia.org/wiki/Bayesian_information_criterion) (BIC), which assess how well the model fits and the model's complexity. In general higher-order models are penalized for complexity, and lower scores within these indicators are better.
 
 #### Method
 ARIMA module is imported from <code>statsmodel</code>:
@@ -240,7 +240,7 @@ from arch import arch_model
 # 'p' and 'q'  are akin to the 'p' and 'q' of an ARMA model.
 # 'vol="GARCH"' means that we're using a GARCH model.
 # The 'mean="Zero"' means that we're estimating a GARCH.
-garch_model = arch_model(yen_futures.Settle, mean="Zero", vol="GARCH", p=1, q=1)
+model = arch_model(df.Settle, mean="Zero", vol="GARCH", p=1, q=1)
 ```
 
 Then the model is fit:
@@ -254,13 +254,13 @@ Furthermore, a 5 day forecast was calculated by calling the <code>forecast</code
 
 ```python
 # Find the last day of the dataset
-last_day = returns.index.max().strftime('%Y-%m-%d')
+last_day = df.index.max().strftime('%Y-%m-%d')
 
 # Create a 5 day forecast of volatility
 forecast_horizon = 5
 
 # Start the forecast using the last_day calculated above
-forecasts = garch_res.forecast(start=last_day, horizon=forecast_horizon)
+forecasts = res.forecast(start=last_day, horizon=forecast_horizon)
 ```
 
 #### Results
@@ -270,13 +270,13 @@ The results were printed to the terminal and were as follows:
 
 | Dep. Variable: |             Settle |        R-squared: |    0.000 |
 |---------------:|-------------------:|------------------:|---------:|
-|    **Mean Model:** |          Zero Mean |   Adj. R-squared: |    0.000 |
-|     **Vol Model:** |              GARCH |   Log-Likelihood: | -79212.8 |
-|  **Distribution:** |             Normal |              AIC: |  158434. |
-|        **Method:**| Maximum Likelihood |              BIC: |  158461. |
-|                |                    | No. Observations: |     7515 |
-|          **Date:** |   Tue, Jun 01 2021 |     Df Residuals: |     7511 |
-|          **Time:** |           12:57:31 |         Df Model: |        4 |
+|    **Mean Model:** |          Zero Mean |   **Adj. R-squared:** |    0.000 |
+|     **Vol Model:** |              GARCH |   **Log-Likelihood:** | -79212.8 |
+|  **Distribution:** |             Normal |              **AIC:** |  158434. |
+|        **Method:**| Maximum Likelihood |              **BIC:** |  158461. |
+|                |                    | **No. Observations:** |     7515 |
+|          **Date:** |   Tue, Jun 01 2021 |     **Df Residuals:** |     7511 |
+|          **Time:** |           12:57:31 |         **Df Model:**|        4 |
 
 <br>
 
@@ -295,6 +295,7 @@ The GARCH model forecast was that was obtained with the <code>.forecast()</code>
 
 ![GARCH Model Forecast](img/garch_5day_fig.png)
 
+---
 
 
 ## Regression Analysis
