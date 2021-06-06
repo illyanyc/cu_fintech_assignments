@@ -17,7 +17,7 @@ This repo contains all of the assignments from the [Columbia University FinTech 
 | PyViz                   | [06_py_viz](https://github.com/illyanyc/cu_fintech_assignments/tree/main/06_py_viz)                     |
 | Project 1 - PowerFolio! | [powerfolio!](https://github.com/illyanyc/powerfolio)                                                   |
 | Time-Series             | [10_time-series](https://github.com/illyanyc/cu_fintech_assignments/tree/main/10_time_series)           |
-
+| Machine Leaning         | [11_machine_leaning](https://github.com/illyanyc/cu_fintech_assignments/tree/main/11_machine_learning)  |
 
 ---
 [Illya Nayshevsky, Ph.D.](illya.n@me.com) <br>

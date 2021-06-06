@@ -1,0 +1,31 @@
+digraph G {
+	x [label="Training Data"]
+	subgraph cluster_0 {
+		node [style=filled]
+		color=blue
+		"Tree #1" -> "1a"
+		"Tree #1" -> "1b"
+		label="Subset 1"
+	}
+	subgraph cluster_1 {
+		node [style=filled]
+		color=red
+		"Tree #2" -> "2a"
+		"Tree #2" -> "2b"
+		label="Subset 2"
+	}
+	subgraph cluster_2 {
+		node [style=filled]
+		color=green
+		"Tree #3" -> "3a"
+		"Tree #3" -> "3b"
+		label="Subset 3"
+	}
+	x -> "Tree #1"
+	x -> "Tree #2"
+	x -> "Tree #3"
+	"1a" -> Voting [label="Class A"]
+	"2b" -> Voting [label="Class B"]
+	"3b" -> Voting [label="Class C"]
+	Voting -> Decision [shape=box]
+}

@@ -1,0 +1,51 @@
+Balanced Random Forest Optimizer
+
+n_est = 10000
+time = 0:01:27.982139
+Balanced Accuracy Score = 0.792
+Confusion Matrix: 
+	Pred-0	Pred-1
+0	15567	1534
+1	34	70
+
+Classification Report:
+                   pre       rec       spe        f1       geo       iba       sup
+
+          0       1.00      0.91      0.67      0.95      0.78      0.63     17101
+          1       0.04      0.67      0.91      0.08      0.78      0.60       104
+
+avg / total       0.99      0.91      0.67      0.95      0.78      0.63     17205
+
+
+n_est = 5000
+time = 0:00:58.368681
+Balanced Accuracy Score = 0.787
+Confusion Matrix: 
+	Pred-0	Pred-1
+0	15556	1545
+1	35	69
+
+Classification Report:
+                   pre       rec       spe        f1       geo       iba       sup
+
+          0       1.00      0.91      0.66      0.95      0.78      0.62     17101
+          1       0.04      0.66      0.91      0.08      0.78      0.59       104
+
+avg / total       0.99      0.91      0.66      0.95      0.78      0.62     17205
+
+
+n_est = 1000
+time = 0:00:09.091945
+Balanced Accuracy Score = 0.787
+Confusion Matrix: 
+	Pred-0	Pred-1
+0	15555	1546
+1	35	69
+
+Classification Report:
+		   pre       rec       spe        f1       geo       iba       sup
+
+          0       1.00      0.91      0.66      0.95      0.78      0.62     17101
+          1       0.04      0.66      0.91      0.08      0.78      0.59       104
+
+avg / total       0.99      0.91      0.66      0.95      0.78      0.62     17205
