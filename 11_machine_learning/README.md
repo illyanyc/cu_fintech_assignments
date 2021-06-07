@@ -35,7 +35,7 @@ This issue is addressed by re-sampling, where over under-sampling samples the ma
 
 ### Learning Models
 
-The learning models used in this exercise are: [Logistic Regression](https://en.wikipedia.org/wiki/Logistic_regression) and [Random Forest](https://en.wikipedia.org/wiki/Random_fores).
+The learning models used in this exercise are: [Logistic Regression](https://en.wikipedia.org/wiki/Logistic_regression) and [Random Forest](https://en.wikipedia.org/wiki/Random_forest).
 
 #### Logistic Regression
 
@@ -94,7 +94,7 @@ conda install --file requirements.txt
 ## Data
 
 Analytical data was provided, and was sourced from LendingClub.
-Data was prepared in similar was for both [Credit Risk Resampling](#credit-risk-resampling) and [Credit Risk Ensemble](#credit-risk-ensemble) machine learning methods.
+Data was prepared in similar was for both [Re-sampling](#re-sampling) and [Ensemble Learning](#ensemble-learning) machine learning methods.
 
 ### Data preparation
 
@@ -139,7 +139,7 @@ The scaler has produced a normalized X training and testing datasets.
 
 ## Re-sampling
 
-Re-sampling was performed on [<code>lending_data.csv</code>](Resources/lending_data.csv.csv) data. The calculations were performed in the [<code>credit_risk_resampling.ipynb</code>](credit_risk_resampling.ipynb) notebook.
+Re-sampling was performed on [<code>lending_data.csv</code>](Resources/lending_data.csv) data. The calculations were performed in the [<code>credit_risk_resampling.ipynb</code>](credit_risk_resampling.ipynb) notebook.
 
 Re-sampling can be achieved via <code>imbalanced-learn</code> library, which provides a variety of tools for handling imbalanced datasets :  
 
@@ -167,7 +167,7 @@ X_resampled, y_resampled = RandomOverSampler(random_state=random_state).fit_resa
 
 #### SMOTE
 
-[SMOTE()](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html) (Synthetic Minority Over-sampling Technique), originally published in 2002 [Journal of Artificial Intelligence Research 16 (2002) 321–357](https://arxiv.org/pdf/1106.1813.pdf), creates synthetic data from minority samples through K-nearest neighbors.
+[SMOTE()](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html) (Synthetic Minority Over-sampling Technique), originally published in 2002 ([Journal of Artificial Intelligence Research 16 (2002) 321–357](https://arxiv.org/pdf/1106.1813.pdf)), creates synthetic data from minority samples through K-nearest neighbors.
 
 ```python
 from imblearn.over_sampling import SMOTE
