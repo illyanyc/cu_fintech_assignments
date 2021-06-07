@@ -167,7 +167,7 @@ X_resampled, y_resampled = RandomOverSampler(random_state=random_state).fit_resa
 
 #### SMOTE
 
-[SMOTE()](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html) (Synthetic Minority Over-sampling Technique), originally published in 2002 ([Journal of Artificial Intelligence Research 16 (2002) 321–357](https://arxiv.org/pdf/1106.1813.pdf)), creates synthetic data from minority samples through K-nearest neighbors.
+[SMOTE()](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html) (Synthetic Minority Over-sampling Technique), originally published in 2002 ([Journal of Artificial Intelligence Research 16 (2002) 321–357](https://arxiv.org/pdf/1106.1813.pdf)), creates synthetic data from minority samples through *K*-nearest neighbors. [K-nearest neighbors](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) is a non-parametric classification method, and consists of *k* closest training samples in data.
 
 ```python
 from imblearn.over_sampling import SMOTE
@@ -209,7 +209,7 @@ X_resampled, y_resampled = SMOTEENN(random_state=random_state).fit_resample(X_tr
 | Naive Random Oversampling         | RandomOverSampler() |        0.994        |   0.99   |    0.99   |    55915   |    55901   |     329    |     343    |
 | SMOTE Oversampling                | SMOTE()             |        0.9945       |   0.99   |    0.99   |    55973   |    55898   |     271    |     346    |
 | Undersampling                     | ClusterCentroids()  |        0.9358       |   0.94   |    0.93   |    1891    |    1680    |     17     |     228    |
-| Combination (Over/Under)-Sampling | SMOTEEN()           |        0.9983       |   1.00   |    1.00   |    55174   |    55856   |     174    |     11     |
+| Combination (Over/Under)-Sampling | SMOTEENN()           |        0.9983       |   1.00   |    1.00   |    55174   |    55856   |     174    |     11     |
 
 The results have shown that SMOTEENN over/under-sampling is the best way to classify predicts credit risk data. 
 
