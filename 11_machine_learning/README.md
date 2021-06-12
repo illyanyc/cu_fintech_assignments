@@ -25,13 +25,9 @@ This exercise predicts credit risk with machine learning techniques.
 
 ### Re-sampling
 
-<<<<<<< Updated upstream
 Historically, loan data is imbalanced, with far more loan approvals than rejections. This imbalance stems from the low applicant rejection rates which are believed to be caused by applicant's due diligence prior to loan application. Basically, people apply to loans that they think they will get. The imbalance in the data creates a problem in machine learning, where a model which is trained on imbalanced data will overwhelmingly predict the most probable outcome, neglecting the criteria of negative outcomes completely.
 
 This issue is addressed by re-sampling, where over under-sampling samples the majority class of the dataset, while oversampling copies the minority class, both of which methods create equal weighed classes.  
-=======
-This issue is addressed by re-sampling, where over undersampling samples the majority class of the dataset, while oversampling copies the minority class, both of which methods create equal weighed classes.  
->>>>>>> Stashed changes
 
 ![underoversampling](https://miro.medium.com/max/725/1*H6XodlitlGDl9YdbwaZLMw.png)
 
@@ -143,9 +139,9 @@ The scaler has produced a normalized X training and testing datasets.
 
 ## Re-sampling
 
-<<<<<<< Updated upstream
+
 Re-sampling was performed on [<code>lending_data.csv</code>](Resources/lending_data.csv) data. The calculations were performed in the [<code>credit_risk_resampling.ipynb</code>](credit_risk_resampling.ipynb) notebook.
-=======
+
 
 ### Results
 
@@ -160,7 +156,7 @@ Re-sampling was performed on [<code>lending_data.csv</code>](Resources/lending_d
 
 
 ---
->>>>>>> Stashed changes
+
 
 Re-sampling can be achieved via <code>imbalanced-learn</code> library, which provides a variety of tools for handling imbalanced datasets :  
 
@@ -243,11 +239,6 @@ Although training a Logistic Regression model using imbalanced data produced the
 
 Ensable learning was performed on [<code>LoanStats</code>](Resources/LoanStats_2019Q1.csv) data. The calculations were performed in the [<code>credit_risk_ensemble.ipynb</code>](credit_risk_ensemble.ipynb) notebook. 
 
-
-=======
-[Ensemble learning](https://en.wikipedia.org/wiki/Ensemble_learning) is a machine learning process that utilizes multiple models in order to optimize learning results. Ensamble learners use classifier algorithms, that are strategically arranged in order to increase learning rate, accuracy or prescision, compared to using those algorithms alone.
-
->>>>>>> Stashed changes
 ### Credit risk prediction 
 
 In this study, <code>loan_status</code> was predicted based on a multitude of other loan applicant criteria. The possible outcomes were binary: <code>high_risk</code> or <code>low_risk</code>. 
@@ -294,11 +285,8 @@ Balanced Random Forest Classifier has returned the following results:
 
 ### Easy Ensemble Classifier
 
-<<<<<<< Updated upstream
 After [data preparation]("#data"), the ensemble classifier was instantiated and fitted:
-=======
-After [data preparation]("#data"), the enseble classifier was instantiated and fitted:
->>>>>>> Stashed changes
+
 
 ```python
 from imblearn.ensemble import EasyEnsembleClassifier
@@ -334,9 +322,5 @@ Easy Ensemble Classifier has returned the following results:
 | Balanced Random Forest Classifier |        0.787        |    0.78   |   0.95   |    15556   |     69     |    1545    |     35     |
 | Easy Ensemble Classifier          |        0.919        |    0.92   |   0.97   |    16152   |     93     |     949    |     11     |
 
-
-<<<<<<< Updated upstream
 Comparing Balanced Random Forest Classifier to Easy Ensemble Classifier, it is evident that the latter has outperformed. Easy Ensemble Classifier Balanced Accuracy Score was 16.7% higher than the score produced by Balanced Random Forest Classifier, 0.787 and 0.919 point respectively. <code>BalancedRandomForest()</code> has also produced 62% greater amount of false positives (<code>0 : Pred 1</code>), and 218% more false negatives (<code>1 : Pred 0</code>). The *f1*-score produced by the <code>BalancedRandomForestClassifier()</code> was also 2% lower than that of <code>EasyEnsambleClassifier()</code>.
-=======
-Comparing Balanced Random Forest Classifier to Easy Ensemble Classifier, it is evident that the latter has ourperformed. Easy Ensemble Classifier Balanced Accuracy Score was 16.7% higher than the score produced by Balanced Random Forest Classifier, 0.787 and 0.919 point respectively. <code>BalancedRandomForest()</code> has also produced 62% greater amount of false positives (<code>0 : Pred 1</code>), and 218% more false negatives (<code>1 : Pred 0</code>). The *f1*-score produced by the <code>BalancedRandomForestClassifier()</code> was also 2% lower than that of <code>EasyEnsambleClassifier()</code>. 
->>>>>>> Stashed changes
+
