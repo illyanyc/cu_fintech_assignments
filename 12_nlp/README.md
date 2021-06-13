@@ -1,5 +1,6 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&width=1000&height=200&section=header&text=Natural%20Language%20Processing&fontSize=30&fontColor=black)
 
+
 <!-- header is made with: https://github.com/kyechan99/capsule-render -->
 
 [Illya Nayshevsky, Ph.D.](http://www.illya.bio) [<img src="https://cdn2.auth0.com/docs/media/connections/linkedin.png" alt="LinkedIn -  Illya Nayshevsky" width=15/>](https://www.linkedin.com/in/illyanayshevskyy/)
@@ -21,16 +22,48 @@ Columbia FinTech Bootcamp Assignment
 
 ## Overview
 
+Natural language processing was used to derive Sentiment Analysis and perform Named Entity Recogntion (NER) on Bitcoin and Ethereum recent news dataset. The analysis returned sentiment analysis in form of positive, negative and neutral sentiment; as well as word
 
 ---
 
 ## Requirements
 
+A new [conda](https://docs.conda.io/en/latest/) environment and [Jupyter Notebook/Lab](https://jupyter.org/) are requried to run the code.
+
+The following libraries were used:
+
+1. [Natural Language Toolkit (NLTK)](https://www.nltk.org/) - leading platform for building Python programs to work with human language data.
+2. [NewsAPI](https://newsapi.org/) - source of articles and breaking news headlines from news sources and blogs across the web
+3. [spaCy](https://spacy.io/) - language processing
+
+
+All of the packages can be installed from terminal:
+
+```python
+pip install pandas
+pip install python-dotenv
+pip install nltk
+pip install matplotlib
+pip install newsapi-python
+pip install -U spacy
+python -m spacy download en_core_web_sm
+```
+
+Or, can be installed at the point of env creation:
+```python
+conda create --name <env> --file reqs.txt
+```
 
 ---
 
 ## Data
 
+The data used in language processing analysis was from NewsAPI. 100 Bitcoin and 100 Ethereum articles in English language were taked for analysis:
+
+```python
+newsapi.get_everything(q=str<coin name>, language='en', page=int<i>)['articles'] 
+# where page corresponds to a multiple of 20 articles (ex. 60 articles :  page=3)
+```
 
 ---
 

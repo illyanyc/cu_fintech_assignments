@@ -1,0 +1,92 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #282a2c;
+    width: 30%;
+    display: grid;
+    grid-template-columns: auto;
+}
+
+svg {
+    width: 100%;
+    align-self: center;
+    justify-self: center;
+    margin-left: 100px;
+}
+
+svg:hover #win1 {
+    animation-delay: 0s;
+    animation-duration: 1.2s;
+    animation-name: animateLogo;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+svg:hover #win2 {
+    animation-delay: 0.2s;
+    animation-duration: 1.2s;
+    animation-name: animateLogo;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+svg:hover #win3 {
+    animation-delay: 0.3s;
+    animation-duration: 1.2s;
+    animation-name: animateLogo;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+svg:hover #win4 {
+    animation-delay: 0.4s;
+    animation-duration: 1.2s;
+    animation-name: animateLogo;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+svg:hover #win5 {
+    animation-delay: 0.5s;
+    animation-duration: 1.2s;
+    animation-name: animateLogo;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+svg:hover #win6 {
+    animation-delay: 0.6s;
+    animation-duration: 1.2s;
+    animation-name: animateLogo;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+svg:hover #win7 {
+    animation-delay: 0.7s;
+    animation-duration: 1.2s;
+    animation-name: animateLogo;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+svg:hover #win8 {
+    animation-delay: 0.8s;
+    animation-duration: 1.2s;
+    animation-name: animateLogo;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes animateLogo {
+    from {
+        transform: translate(0) translate(0);
+        opacity: 1;
+    }
+    to {
+        transform: translate(50px) translate(-23px);
+        opacity: 0;
+    }
+}
+
+.st0{fill:#6488A3;}
+.st1{fill:#8BBADE;}
+.st2{fill:#F1F1F1;}
+.st3{fill:#9E9E9E;}
