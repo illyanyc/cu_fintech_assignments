@@ -73,7 +73,7 @@ newsapi.get_everything(q=str<coin name>, language='en', page=int<i>)['articles']
 
 ### Preparation and cleaning
 
-#### Sentiment analysis 
+#### Sentiment analysis data preparation
 Sentiment analysis was performed on a pristine corpus of articles. 
 
 #### Frequency analysis data preparation
