@@ -67,7 +67,7 @@ conda create --name <env> --file reqs.txt
 The data used in language processing analysis was from NewsAPI. 100 Bitcoin and 100 Ethereum articles in English:
 
 ```python
-newsapi.get_everything(q=str<coin name>, language='en', page=int<i>)['articles'] 
+newsapi.get_everything(q='coin_name', language='en', page=1)['articles'] 
 # where page corresponds to a multiple of 20 articles (ex. 60 articles :  page=3)
 ```
 
@@ -112,7 +112,7 @@ regex.sub('', <corpus>)
 
 ```python
 from nltk.tokenize import word_tokenize, sent_tokenize
-[words,...] = word_tokenize(re_clean)
+['word1',...] = word_tokenize(re_clean)
 ```
 
 3. Lemmatized -[[Python - Stemming and Lemmatization](https://www.tutorialspoint.com/python_data_science/python_stemming_and_lemmatization.htm)]
