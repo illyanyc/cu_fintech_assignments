@@ -247,7 +247,7 @@ At the time of analysis (6/13/2021) the word pair "bitcoin" and "cash" showed hi
 
 Single word frequency was dominated by "bitcoin".
 
-<img src="img/btc_wc.png" width="60%" self-align="center">
+![btc_wordcloud](img/btc_wc.png)
 
 
 
@@ -270,7 +270,8 @@ At the time of analysis (6/9/2021) the word pair "ethereum" and "foundation" sho
 
 Single word frequency was dominated by "ethereum".
 
-<img src="img/eth_wc.png" width="60%" self-align="center">
+![eth_wordcloud](img/eth_wc.png)
+
 
 ---
 
@@ -290,3 +291,6 @@ doc = nlp('string of text')
 displacy.render(doc, style='ent')
 ```
 
+<img src="img/btc_ner.png" width="100%" self-align="center">
+
+<img src="img/eth_ner.png" width="100%" self-align="center">
