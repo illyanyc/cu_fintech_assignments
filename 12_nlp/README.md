@@ -22,13 +22,18 @@ Columbia FinTech Bootcamp Assignment
 
 ## Overview
 
-Natural language processing was used to derive Sentiment Analysis and perform Named Entity Recogntion (NER) on Bitcoin and Ethereum recent news dataset. The analysis returned sentiment analysis in form of positive, negative and neutral sentiment; as well as word
+Natural language processing was used to derive Sentiment Analysis, Frequency Analysis and perform Named Entity Recognition (NER) a corpus of recent Bitcoin and Ethereum news articles. 100 articles were used for each cryptocurrency. The analysis returned:
+
+1. Sentiment analysis in form of positive, negative and neutral sentiment 
+2. Frequency analysis results consisting most common word pairs
+2. Frequency analysis in form of a word cloud of most prevalent words in the articles
+3. Rendered NER text highlighting all entities
 
 ---
 
 ## Requirements
 
-A new [conda](https://docs.conda.io/en/latest/) environment and [Jupyter Notebook/Lab](https://jupyter.org/) are requried to run the code.
+A new [conda](https://docs.conda.io/en/latest/) environment and [Jupyter Notebook/Lab](https://jupyter.org/) are required to run the code.
 
 The following libraries were used:
 
@@ -58,19 +63,94 @@ conda create --name <env> --file reqs.txt
 
 ## Data
 
-The data used in language processing analysis was from NewsAPI. 100 Bitcoin and 100 Ethereum articles in English language were taked for analysis:
+### Data source
+The data used in language processing analysis was from NewsAPI. 100 Bitcoin and 100 Ethereum articles in English:
 
 ```python
 newsapi.get_everything(q=str<coin name>, language='en', page=int<i>)['articles'] 
 # where page corresponds to a multiple of 20 articles (ex. 60 articles :  page=3)
 ```
 
+### Preparation and cleaning
+
+#### Sentiment analysis 
+Sentiment analysis was performed on a pristine corpus of articles. 
+
+#### Frequency analysis data preparation
+
+* The following libraries were used:
+
+1. [Punkt tokenizer models](https://www.nltk.org/_modules/nltk/tokenize/punkt.html) - tokenizer model that was built using unsupervised algorithm that  divides a text into a list of sentences. It then builds a model for abbreviation of words, collocations, and words that start sentences. 
+
+```python
+nltk.download('punkt')
+```
+2. [Wordnet](https://wordnet.princeton.edu/) - lexical database of English language. Nouns, verbs, adjectives and adverbs are grouped into sets of cognitive synonyms (synsets), each expressing a distinct concept. 
+
+```python
+nltk.download('wordnet')
+```
+
+3. [Stopwords](https://gist.github.com/sebleier/554280) - list of stopwords in English language.
+
+```python
+nltk.download('stopwords')
+```
+
+* The corpus of articles was cleaned-up:
+
+1. Removed punctuation from text
+
+```python
+import re
+from string import punctuation
+regex = re.compile("[^a-zA-Z ]")
+regex.sub('', <corpus>)
+```
+
+2. Tokenized - [[Python - Word Tokenization](https://www.tutorialspoint.com/python_data_science/python_word_tokenization.htm)]
+
+```python
+from nltk.tokenize import word_tokenize, sent_tokenize
+[words,...] = word_tokenize(re_clean)
+```
+
+3. Lemmatized -[[Python - Stemming and Lemmatization](https://www.tutorialspoint.com/python_data_science/python_stemming_and_lemmatization.htm)]
+
+```python
+from nltk.stem import WordNetLemmatizer, PorterStemmer
+lemmatizer = WordNetLemmatizer()
+lemmatizer.lemmatize('word')
+```
+
+4. Removed stopwords - [[Stopwords](https://en.wikipedia.org/wiki/Stop_word)]
+
+```python
+from nltk.corpus import stopwords
+custom_sw = ['char','tec','inc','say','via','bos']
+```
+
+In addition to all of the above, all words were made lowercase, and all words less than 3 characters were removed. 
+
+#### Named Entity Recognition data preparation
+
+A list of characters was removed from the corpus
+
+```python
+rep_list = ['\r','\n','\xa0','[', ']','+','chars','-','\\']
+```
+
+
 ---
 
 ## Sentiment Analysis
 
+[Sentiment analysis](https://en.wikipedia.org/wiki/Sentiment_analysis) utilizes natural language processing and text analysis to identify meaning and tone. It is able to identify whether the text is positive, negative or neutral. 
 
 ### Method
+
+[Natural Language Toolkit (NLTK)](https://www.nltk.org/) library was used to derive the cryptocurrency sentiment based on lexicon and other language rules. [Valance Aware Dictionary and Sentiment Reasoner (VADER)](https://github.com/cjhutto/vaderSentiment) was used, with [<code>vader_dictionary</code>](https://github.com/cjhutto/vaderSentiment/blob/master/vaderSentiment/vader_lexicon.txt) as a reference dictionary.
+
 
 ```python
 import nltk as nltk
@@ -78,8 +158,13 @@ nltk.download('vader_lexicon')
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 ```
 
+[<code>SentimentIntensityAnalysis()</code>](https://www.nltk.org/api/nltk.sentiment.html) method was used, which assigns sentiment intensity score to sentences.
+
 ### Results
+
 #### Bitcoin
+
+Sentiment analysis of 100 Bitcoin articles showed that neutral sentiment has prevailed, with mean neutral score of <code>0.903</code>.
 
 |       | compound | positive | negative | neutral |
 |------:|:--------:|:--------:|:--------:|:-------:|
@@ -95,6 +180,8 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 #### Ethereum
 
+Sentiment analysis of 100 Ethereum articles showed that neutral sentiment has prevailed, with mean neutral score of <code>0.894</code>.
+
 |       | compound | positive | negative | neutral |
 |------:|:--------:|:--------:|:--------:|:-------:|
 | count |  100.000 |  100.000 |  100.000 | 100.000 |
@@ -106,59 +193,100 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 |   75% |   0.402  |   0.097  |   0.069  |  0.954  |
 |   max |   0.778  |   0.246  |   0.286  |  1.000  |
 
+
+#### Conclusion
+
+* BTC has the highest mean + score : 0.09
+* BTC has the highest compound score : 0.25
+* BTC has the highest positive score : 0.28
+
 ---
 
 ## Natural Language Processing
 
-```python
-nltk.download('punkt')
-nltk.download('wordnet')
-nltk.download('stopwords')
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize, sent_tokenize
-from nltk.stem import WordNetLemmatizer, PorterStemmer
-```
+### NGrams and Frequency Analysis
+
+NGram is a contiguous sequence of *n* items of text or speech withing the corpus of text. Frequency analysis provides a word count of text or speech withing the corpus of text.
+
+Ngrams with *n* = 2 were generated in order to visualize words of contiguous sequence within the corpus of text.
 
 ```python
 from collections import Counter
 from nltk import ngrams
+
+n_grams = ngrams([[tokens],...], n=2)
+```
+
+Then word clouds were generated to visualize word frequency within the corpus of articles.
+
+```python
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+
+wc = WordCloud(width=1600, height=800).generate('string of words')
+plt.imshow(wc)
 ```
 
 ### Results
 #### Bitcoin
 
-|         tokens        | count |
-|:---------------------:|:-----:|
-|          (elon, musk) |   27  |
-|   (virtual, currency) |   11  |
-|   (currency, bitcoin) |   11  |
-| (illustration, taken) |   11  |
-|       (char, bitcoin) |   9   |
-|       (char, reuters) |   9   |
-|         (seen, front) |   8   |
-|           (ceo, elon) |   7   |
-|           (bos, elon) |   7   |
-|  (accepting, bitcoin) |   6   |
+At the time of analysis (6/13/2021) the word pair "bitcoin" and "cash" showed highest frequency.
+
+|   |      tokens      | count |
+|--:|:----------------:|:-----:|
+| 0 |  (bitcoin, cash) |   7   |
+| 1 |      (year, ago) |   6   |
+| 2 |   (white, paper) |   6   |
+| 3 |  (bitcoin, flip) |   5   |
+| 4 |     (one, count) |   5   |
+| 5 |   (credit, card) |   5   |
+| 6 |     (make, sure) |   5   |
+| 7 | (email, address) |   5   |
+| 8 |      (buy, sell) |   5   |
+| 9 | (worth, bitcoin) |   4   |
+
+Single word frequency was dominated by "bitcoin".
 
 <img src="img/btc_wc.png" width="60%" self-align="center">
 
+
+
 #### Ethereum
 
-|            tokens           | count |
-|:---------------------------:|:-----:|
-|             (char, bitcoin) |   11  |
-|   (expressed, entrepreneur) |   7   |
-| (entrepreneur, contributor) |   7   |
-|                (elon, musk) |   7   |
-|         (virtual, currency) |   6   |
-|       (illustration, taken) |   6   |
-|            (char, opinions) |   6   |
-|       (opinions, expressed) |   6   |
-|          (vitalik, buterin) |   5   |
-|         (bitcoin, ethereum) |   5   |
+At the time of analysis (6/9/2021) the word pair "ethereum" and "foundation" showed highest frequency.
+
+|   |         tokens         | count |
+|--:|:----------------------:|:-----:|
+| 0 | (ethereum, foundation) |   19  |
+| 1 |    (ethereum, classic) |   15  |
+| 2 |    (blockchain, event) |   9   |
+| 3 |        (bitcoin, cash) |   8   |
+| 4 |     (ethereum, meetup) |   8   |
+| 5 |         (author, owns) |   6   |
+| 6 |          (owns, small) |   6   |
+| 7 | (sessions, blockchain) |   6   |
+| 8 |     (vitalik, buterin) |   6   |
+| 9 |    (version, ethereum) |   5   |
+
+Single word frequency was dominated by "ethereum".
 
 <img src="img/eth_wc.png" width="60%" self-align="center">
 
 ---
 
 ## Named Entity Recognition
+
+Named entity recognition locates and classifies named entities mentioned in unstructured text into pre-defined categories. All entities were tagged in text and labeled.
+
+SpaCy was utlized to extract named entities. 
+
+
+```python
+import spacy
+from spacy import displacy
+
+nlp = spacy.load('en_core_web_sm')
+doc = nlp('string of text')
+displacy.render(doc, style='ent')
+```
+
