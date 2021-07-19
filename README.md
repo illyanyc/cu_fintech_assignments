@@ -20,6 +20,7 @@ This repo contains all of the assignments from the [Columbia University FinTech 
 | Machine Leaning             | [11_machine_leaning](https://github.com/illyanyc/cu_fintech_assignments/tree/main/11_machine_learning)  |
 | Natural Language Processing | [12_nlp](https://github.com/illyanyc/cu_fintech_assignments/tree/main/12_nlp)                           |
 | AWS - Clustering Crypto     | [13_aws_clustering_crypto](https://github.com/illyanyc/unit13-ClusteringCrypto)                         |
+| Project 2 - Technitrade     | [Technitrade](https://github.com/illyanyc/technitrade)                                                  |
 
 ---
 
