@@ -163,3 +163,17 @@ The output should state that the node is *Unlocked* and block are being mined.
 ![7_launch_node2](screenshots/7_launch_node2.png)
 
 ### 4. MyCrypto Set-up
+
+a. Setting up a *Custom Network*
+  1. Click <code>Change Network</code> on the bottom left; then select <code>Add Custom Node</code>
+  2. Enter the *Node Name*
+  3. Select <code>Custom</code> from the *Network* dropdown menu
+  4. Enter the *Network Name*
+  5. Select <code>ETH</code> from the *Currency* dropdown menu
+  6. Enter the network's chain ID in the *Chain ID* field (our chain ID was set to <code>111</code> in step **2i**)
+  7. Set the *URl* to <code>httlp://127.0.0.1:4585</code>
+
+![8_mycrypto_node_setup](screenshots/8_mycrypto_node_setup.png)
+
+
+b. Testing the network
