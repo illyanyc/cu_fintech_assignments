@@ -22,7 +22,7 @@ This repo contains all of the assignments from the [Columbia University FinTech 
 | AWS - Clustering Crypto     | [13_aws_clustering_crypto](https://github.com/illyanyc/unit13-ClusteringCrypto)                              |
 | Project 2 - Technitrade     | [Technitrade](https://github.com/illyanyc/technitrade)                                                       |
 | Algorithmic Trading         | [15_algorithmic_trading](https://github.com/illyanyc/cu_fintech_assignments/tree/main/15_algorithmic_trading)|
-| Blockchain Building Blocks  | [Technitrade](https://github.com/illyanyc/cu_fintech_assignments/tree/main/18_blockchain)                    |
+| Blockchain Building Blocks  | [18_blockchain](https://github.com/illyanyc/cu_fintech_assignments/tree/main/18_blockchain)                  |
 
 ---
 
