@@ -20,6 +20,7 @@ Columbia FinTech Bootcamp Assignment
 
 ## Overview
 
+A test Ethereum blockchain was set up to demonstrate blockchain capabilities and executing test transaction. A test net allows for a test environment where transaction can be executed in *test cryptocurrency* that has no real value. Go Ethereum ()<code>geth</code>) was used to build the blockchain. MyCrypto application was used to connect to the test network and execute transactions.
 
 ## Requirements
 
@@ -153,21 +154,53 @@ The genesis block is generated with <code>puppeth</code>
 
   ![launch_node2](screenshots/launch_node2.png)
 
-### 4. MyCrypto Set-up
+## Transacting on Blockchain
 
-a. Setting up a *Custom Network*
-  1. Click <code>Change Network</code> on the bottom left; then select <code>Add Custom Node</code>
-  2. Enter the *Node Name*
-  3. Select <code>Custom</code> from the *Network* dropdown menu
-  4. Enter the *Network Name*
-  5. Enter <code>ETH</code> in the *Currency* field
-  6. Enter the network's chain ID in the *Chain ID* field (our chain ID was set to <code>111</code> in step **2i**)
-  7. Set the *URl* to <code>http://127.0.0.1:4585</code>
+### MyCrypto Set-up
+
+1. Setting up a *Custom Network*
+  * Click <code>Change Network</code> on the bottom left; then select <code>Add Custom Node</code>
+  * Enter the *Node Name*
+  * Select <code>Custom</code> from the *Network* dropdown menu
+  * Enter the *Network Name*
+  * Enter <code>ETH</code> in the *Currency* field
+  * Enter the network's chain ID in the *Chain ID* field (our chain ID was set to <code>111</code> in step **2i**)
+  * Set the *URL* to <code>http://127.0.0.1:4585</code>
 
   <img src="screenshots/mycrypto_node_setup.png" width=50%>
 
 
-b. Testing the network
+2. Import account
+  * An account cant be imported by importing a <code>keystore</code> file.
+  * The keystore file can be loaded from <code>~/node1/keystore/"keystore_file"</code>
+
+  <img src="screenshots/keystore_1.png" width=80%>
+  <img src="screenshots/keystore_2.png" width=80%>
+
+### Sending Transactions
+
+1. Transaction is sent by entering:
+  * *To Address* = node2 public key: <code>0xBA7599054Cd43355300F913c00Df9d200c5EEc39</code>
+  * *Amount* = integer
+  * Press <code>Send Transaction</code>
+
+ <img src="screenshots/sending_transaction.png" width=80%>
 
 
-http://127.0.0.1:8545
+2. Once transaction is sent, a confirmation message will print:
+
+ <img src="screenshots/transaction_sent.png" width=80%>
+
+3. Nodes process transactions
+  * node1 receives transaction and hashes it:
+  <img src="screenshots/node1_transaction.png" width=80%>
+
+  * node2 confirms the transaction:
+  <img src="screenshots/node2_transaction.png" width=80%>
+
+
+4. Transaction status
+  * The status of transaction can be viewed by clicking *TX Status* and entering TX Hash:
+  <img src="screenshots/transaction_confirmation.png" width=80%>
+
+  Here we see that the transaction status is **SUCCESSFUL**.
