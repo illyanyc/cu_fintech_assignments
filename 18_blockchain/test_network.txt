@@ -24,6 +24,8 @@ ChainID: 1010
 
 ---
 
+Network Name: fintechtest
+
 Node 1.
 
 Public address of the key:   0x21870029d2615ab63AAA2c2c2826302Ef54a4aEC
@@ -36,4 +38,4 @@ Public address of the key:   0xBA7599054Cd43355300F913c00Df9d200c5EEc39
 Path of the secret key file: node2/keystore/UTC--2021-08-03T00-46-39.719709000Z--ba7599054cd43355300f913c00df9d200c5eec39
 
 
-ChainID: 21870029d2615ab63aaa2c2c2826302ef54a4aec
+ChainID: 2021
