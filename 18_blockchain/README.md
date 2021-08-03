@@ -169,7 +169,7 @@ a. Setting up a *Custom Network*
   2. Enter the *Node Name*
   3. Select <code>Custom</code> from the *Network* dropdown menu
   4. Enter the *Network Name*
-  5. Select <code>ETH</code> from the *Currency* dropdown menu
+  5. Enter <code>ETH</code> in the *Currency* field
   6. Enter the network's chain ID in the *Chain ID* field (our chain ID was set to <code>111</code> in step **2i**)
   7. Set the *URl* to <code>httlp://127.0.0.1:4585</code>
 
@@ -177,3 +177,6 @@ a. Setting up a *Custom Network*
 
 
 b. Testing the network
+
+
+http://127.0.0.1:8545/
