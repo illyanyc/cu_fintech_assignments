@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=waving&color=timeAuto&width=1000&height=100&section=header&text=Columbia%20University%20FinTech%20Bootcamp%20Assignments&fontSize=30&fontColor=black)
+![header](https://capsule-render.vercel.app/api?type=waving&color=timeAuto&width=1000&height=100&section=header&text=Columbia%20University%20FinTech%20-%20Portfolio&fontSize=30&fontColor=black)
 
 <!--- the header is made with: https://github.com/kyechan99/capsule-render -->
 
@@ -23,6 +23,7 @@ This repo contains all of the assignments from the [Columbia University FinTech 
 | Project 2 - Technitrade     | [Technitrade](https://github.com/illyanyc/technitrade)                                                       |
 | Algorithmic Trading         | [15_algorithmic_trading](https://github.com/illyanyc/cu_fintech_assignments/tree/main/15_algorithmic_trading)|
 | Blockchain Building Blocks  | [18_blockchain](https://github.com/illyanyc/cu_fintech_assignments/tree/main/18_blockchain)                  |
+| Blockchain Python           | [19_blockchain_python](https://github.com/illyanyc/cu_fintech_assignments/tree/main/19_blockchain_python)    |
 
 ---
 
