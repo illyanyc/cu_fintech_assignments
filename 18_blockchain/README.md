@@ -193,10 +193,10 @@ The genesis block is generated with <code>puppeth</code>
 
 3. Nodes process transactions
   * node1 receives transaction and hashes it:
-  <img src="screenshots/node1_transaction.png" width=80%>
+  ![node1_transaction](screenshots/node1_transaction.png)
 
   * node2 confirms the transaction:
-  <img src="screenshots/node2_transaction.png" width=80%>
+  ![node2_transaction](screenshots/node2_transaction.png)
 
 
 4. Transaction status
