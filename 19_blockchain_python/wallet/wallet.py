@@ -6,32 +6,41 @@ from dotenv import load_dotenv
 # Load and set environment variables
 load_dotenv("resources/mnemonic.env")
 mnemonic = os.getenv("mnemonic")
-# print(f"Mnemonic : \"{mnemonic}\"")
 
 # Import constants.py and necessary functions from bit and web3
 from constants import *
 from bit.wallet import PrivateKeyTestnet, NetworkAPI
 from web3 import Account, Web3, HTTPProvider 
 
+# Connect to Etherum Node
+url = "http://127.0.0.1:8545"
+w3 = Web3(HTTPProvider(url))
+
+from web3.middleware import geth_poa_middleware
+w3.middleware_onion.inject(geth_poa_middleware, layer=0)
+
+# Check connection
+print(f"Connected to Ethereum node {url}: {w3.isConnected()}")
+print(f"ChainId : {w3.eth.chainId}")
+
 # Create a function called `derive_wallets`
 def derive_wallets(coin : str,
                    mnemonic : str = mnemonic,
                    numderive : int = 3):
     
-    print(mnemonic)
-    command = f"./derive -g --mnemonic={str(mnemonic)} --coin={coin} --numderive={str(numderive)} --cols=address,index,path,privkey,pubkey,pubkeyhash,xprv,xpub --format=json"
+    command = f"./derive -g --mnemonic=\"{mnemonic}\" --coin={coin} --numderive={str(numderive)} --cols=address,index,path,privkey,pubkey,pubkeyhash,xprv,xpub --format=json"
     p = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
     output, err = p.communicate()
     p_status = p.wait()
-    print(output)
     return json.loads(output)
 
 
 # Create a dictionary object called coins to store the output from `derive_wallets`.
-coins = {}
-def populate_coins_dict():
-    coins[BTCTEST] = derive_wallets(mnemonic=mnemonic, coin=BTCTEST)
-    coins[ETH] = derive_wallets(mnemonic=mnemonic, coin=ETH)
+coins = {
+    ETH : derive_wallets(mnemonic=mnemonic, coin=ETH),
+    BTCTEST : derive_wallets(mnemonic=mnemonic, coin=BTCTEST),
+    BTC : derive_wallets(mnemonic=mnemonic, coin=BTC)
+}
 
 # Create a function called `priv_key_to_account` that converts privkey strings to account objects.
 def priv_key_to_account(coin : str,

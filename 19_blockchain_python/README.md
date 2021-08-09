@@ -52,7 +52,7 @@ php composer.phar install
 
 An PHP install error is prevalent on Apple Silicon machines:
 
-![php_install_error](resources/img/php_install_error.png)
+![php_install_error](img/php_install_error.png)
 
 
 * To resolve the error, continue with following commands:
@@ -71,8 +71,11 @@ brew tap shivammathur/php
 brew install shivammathur/php/php@7.3
 export PATH="/usr/local/opt/php@7.3/bin:$PATH"
 
-brew unlink php
-brew link php@7.3
+brew uninstall php
+
+brew unlink php@7.3
+brew upgrade php@7.3
+brew link php@7.3 --overwrite
 ```
 
 ```bash
@@ -81,7 +84,7 @@ php -info | grep "GMP"
 php installer.php
 php composer.phar install
 ```
-![php_install_error_resolved](resources/img/php_install_error_resolved_2.png)
+![php_install_error_resolved](img/php_install_error_resolved_2.png)
 
 * Creating symlink
 
@@ -187,7 +190,7 @@ pprint(coins[ETH][0])
 
 Transacting on the Bitcoin Testnet is completely handled by the <code>bit</code> library, while transacting on the Etherum private test-net requires initializing <code>web3.py</code> library and connecting to a local testnet node.
 
-In the *python* shell:
+The <code>wallet</code> app will execute the following code in the background:
 
 ```python
 # Connect to Etherum Node
@@ -203,7 +206,7 @@ print(f"Connected to Ethereum node {url}: {w3.isConnected()}")
 print(f"ChainId : {w3.eth.chainId}")
 ```
 
-The local Ethereum testnet had the following parameters:
+The local Ethereum testnet used testing had the following parameters:
 ```output
 Connected to Ethereum node http://127.0.0.1:8545: True
 ChainId : 1337
@@ -263,23 +266,20 @@ signed = account.sign_transaction(raw_tx)
         
 ### Examples of processed transactions
 
+The wallet can be launched in *Python* shell:
+
+![python_shell](img/python_shell.png)
+
 * Bitcoin Testnet
 
 Sending a test transaction from the first Bitcoint Testnet address derived from mnemonic (*index* = 0) to the second address (*index* = 1):
 
-```python
-# Test Bitcoin transaction
-btc_acc = priv_key_to_account(BTCTEST, coins[BTCTEST][0]['privkey'])
-btc_transaction = send_tx(account = btc_acc, 
-                          coin=BTCTEST,
-                          to="mkQwyRXQY19EZvY67JhdMpkzzQ8SkiiGUQ",
-                          amount=0.00000000001)
-```
+![python_shell_btc](img/python_shell_btc.png)
 
 
 Result:
 
-![btx_tx](resources/img/btc_tx-2.png)
+![btx_tx](img/btc_tx.png)
      
     
     
@@ -289,20 +289,13 @@ Sending a test transaction from the first Ethereum address derived from mnemonic
 
 Ganache local Ethereum testnet:
 
-<img src="resources/img/ganache.png" width=50%>
+<img src="img/ganache.png" width=50%>
 
 
 Ethereum transaction:
 
-```python
-# Test Ethereum transaction
-eth_acc = priv_key_to_account(ETH, coins[ETH][0]['privkey'])
-eth_transaction = send_tx(account = eth_acc, 
-                          coin=ETH,
-                          to="0x28E72008368b60bf3400232786aeDc603990F15F",
-                          amount=10)
-```
+![python_shell_btc](img/python_shell_eth.png)
 
 Result:
 
-![eth_tx](resources/img/eth_tx-2.png)
+![eth_tx](img/eth_tx.png)
