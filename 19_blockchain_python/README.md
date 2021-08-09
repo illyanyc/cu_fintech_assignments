@@ -287,6 +287,13 @@ Result:
 
 Sending a test transaction from the first Ethereum address derived from mnemonic (*index* = 0) to the second address (*index* = 1). A local network was deployed using [Ganache](https://www.trufflesuite.com/ganache) using the same mnemonic derived using <code>hd-wallet-derive</code>:
 
+Ganache local Ethereum testnet:
+
+<img src="resources/img/ganache.png" width=50%>
+
+
+Ethereum transaction:
+
 ```python
 # Test Ethereum transaction
 eth_acc = priv_key_to_account(ETH, coins[ETH][0]['privkey'])
