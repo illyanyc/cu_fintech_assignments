@@ -21,9 +21,17 @@ Columbia FinTech Bootcamp Assignment
 
 ## Overview
 
+A multicurrency wallet deployed with [<code>hd-wallet-derive</code>](https://github.com/dan-da/hd-wallet-derive) and controlled via a Python program. The currencies inlude Test Bitcoin (tBTC) and Ethereum (ETH) running on a private test nework. The connectivity to the test networks is provided by the [bit](https://ofek.dev/bit/) and [web3.py](https://web3py.readthedocs.io/en/stable/) libraries respectively.
 
 ## Requirements
 
+1. [<code>hd-wallet-derive</code>](https://github.com/dan-da/hd-wallet-derive) - command-line tool that derives bip32 addresses and private keys for Bitcoin and many altcoins.
+
+2. [bit](https://ofek.github.io/bit/) - Python Bitcoin library
+
+3. [web3.py](https://github.com/ethereum/web3.py) - Python library for interacting with Ethereum
+
+All requirements necessary for running the program are located in the [<code>requirements.txt</code>](resources/requirements.txt) file.
 
 ## Installation
 
