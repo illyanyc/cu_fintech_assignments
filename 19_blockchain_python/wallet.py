@@ -1,33 +1,37 @@
 # Import dependencies
-import subprocess, os
+import subprocess, os, time
 import json
 from dotenv import load_dotenv
 
 # Load and set environment variables
 load_dotenv("resources/mnemonic.env")
 mnemonic = os.getenv("mnemonic")
+# print(f"Mnemonic : \"{mnemonic}\"")
 
 # Import constants.py and necessary functions from bit and web3
 from constants import *
 from bit.wallet import PrivateKeyTestnet, NetworkAPI
 from web3 import Account, Web3, HTTPProvider 
- 
+
 # Create a function called `derive_wallets`
 def derive_wallets(coin : str,
                    mnemonic : str = mnemonic,
                    numderive : int = 3):
     
-    command = f"./derive -g --mnemonic=\"{mnemonic}\" --coin={coin} --numderive={str(numderive)} --cols=address,index,path,privkey,pubkey,pubkeyhash,xprv,xpub --format=json"
+    print(mnemonic)
+    command = f"./derive -g --mnemonic={str(mnemonic)} --coin={coin} --numderive={str(numderive)} --cols=address,index,path,privkey,pubkey,pubkeyhash,xprv,xpub --format=json"
     p = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
     output, err = p.communicate()
     p_status = p.wait()
+    print(output)
     return json.loads(output)
 
 
 # Create a dictionary object called coins to store the output from `derive_wallets`.
 coins = {}
-coins[BTCTEST] = derive_wallets(mnemonic=mnemonic, coin=BTCTEST)
-coins[ETH] = derive_wallets(mnemonic=mnemonic, coin=ETH)
+def populate_coins_dict():
+    coins[BTCTEST] = derive_wallets(mnemonic=mnemonic, coin=BTCTEST)
+    coins[ETH] = derive_wallets(mnemonic=mnemonic, coin=ETH)
 
 # Create a function called `priv_key_to_account` that converts privkey strings to account objects.
 def priv_key_to_account(coin : str,
@@ -40,7 +44,6 @@ def priv_key_to_account(coin : str,
     
     elif coin == "eth":
         return Account.privateKeyToAccount(priv_key)
-    
 
 # Create a function called `create_tx` that creates an unsigned transaction appropriate metadata.
 def create_tx(acc, 
@@ -95,10 +98,3 @@ def send_tx(account,
         print(f"{w3.fromWei(amount, 'ether')} eth sent from : {account.address} to : {to}") 
         print(f"Signed transaction : {signed.rawTransaction.hex()}")
         print(f"Signed transaction hash : {signed.hash.hex()}")
-
-    
-
-
-
-
-    
