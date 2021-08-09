@@ -13,19 +13,19 @@ Columbia FinTech Bootcamp Assignment
 ### Table of Contents
 * [Overview](#overview)
 * [Requirements](#requirements)
-* [HD Wallets](#blockchain-setup)
+* [Installation](#requirements)
+* [Derive HD Wallet](#derive-hd-wallet)
 * [Transacting on Blockchain](#transacting-on-blockchain)
 
 ---
 
-## HD Wallets
-
-https://github.com/dan-da/hd-wallet-derive
-
-https://medium.com/cosmostation/the-magic-behind-a-mnemonic-phrase-and-hd-wallets-let-us-explain-43d9c97f6098
+## Overview
 
 
+## Requirements
 
+
+## Installation
 
     
 ```bash
@@ -81,4 +81,14 @@ ln -s hd-wallet-derive/hd-wallet-derive.php derive
 
 
 ./derive -g --mnemonic="ten differ trade fly night share feature feel quick shoot invest enroll" --coin=eth --numderive=12 --cols=address,index,path,privkey,pubkey,pubkeyhash,xprv,xpub --format=json
+
+
+
+## Derive HD Wallet
+
+[HD Wallets](https://medium.com/cosmostation/the-magic-behind-a-mnemonic-phrase-and-hd-wallets-let-us-explain-43d9c97f6098) enable derivation of determenistic addresses from mnemonic phrases. [<code>hd-wallet-derive</code>](https://github.com/dan-da/hd-wallet-derive) is a python library that supports [BIP32](http://bip32.org/), [BIP39](https://www.blockplate.com/blogs/blockplate/list-of-bip39-wallets-mnemonic-seed), [BIP44](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki), and many more other wallet derivation algorithms.
+
+In this example, a wallet is derived from a mnemonic stored in the [<code>mnemonic</code>](resources/mnemonic.env)
+
+
 

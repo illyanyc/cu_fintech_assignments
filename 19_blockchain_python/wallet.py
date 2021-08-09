@@ -1,11 +1,10 @@
 # Import dependencies
-import subprocess
+import subprocess, os
 import json
 from dotenv import load_dotenv
-from constants import *
 
 # Load and set environment variables
-load_dotenv("resources/test_keys.env")
+load_dotenv("resources/mnemonic.env")
 mnemonic = os.getenv("mnemonic")
 
 # Import constants.py and necessary functions from bit and web3
@@ -13,7 +12,6 @@ from constants import *
 from bit.wallet import PrivateKeyTestnet, NetworkAPI
 from web3 import Account, Web3, HTTPProvider 
  
-    
 # Create a function called `derive_wallets`
 def derive_wallets(coin : str,
                    mnemonic : str = mnemonic,
