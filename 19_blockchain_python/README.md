@@ -13,10 +13,17 @@ Columbia FinTech Bootcamp Assignment
 ### Table of Contents
 * [Overview](#overview)
 * [Requirements](#requirements)
-* [Blockchain Setup](#blockchain-setup)
+* [HD Wallets](#blockchain-setup)
 * [Transacting on Blockchain](#transacting-on-blockchain)
 
 ---
+
+## HD Wallets
+
+https://github.com/dan-da/hd-wallet-derive
+
+https://medium.com/cosmostation/the-magic-behind-a-mnemonic-phrase-and-hd-wallets-let-us-explain-43d9c97f6098
+
 
 
 
@@ -29,7 +36,7 @@ php installer.php
 php composer.phar install
 ```  
 
-![php_install_error](img/php_install_error.png)
+![php_install_error](resources/img/php_install_error.png)
 
 
 * On M1 Mac:
@@ -58,11 +65,20 @@ php -info | grep "GMP"
 php installer.php
 php composer.phar install
 ```
-![php_install_error_resolved](img/php_install_error_resolved_2.png)
+![php_install_error_resolved](resources/img/php_install_error_resolved_2.png)
 
 * Creating symlink
 
 ```bash
 ln -s hd-wallet-derive/hd-wallet-derive.php derive
 ```
+
+* <code>cd</code> into main directory and generate 12 word mnemonic
+
+```bash
+./derive -g --gen-words=12
+```
+
+
+./derive -g --mnemonic="ten differ trade fly night share feature feel quick shoot invest enroll" --coin=eth --numderive=12 --cols=address,index,path,privkey,pubkey,pubkeyhash,xprv,xpub --format=json
 
