@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&width=1000&height=200&section=header&text=Blockchain%20Python&fontSize=30&fontColor=black)
+![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&width=1000&height=200&section=header&text=Wallet%20-%20a%Multicurrency%2020Python%20Blockchain%20&fontSize=30&fontColor=black)
 
 
 <!-- header is made with: https://github.com/kyechan99/capsule-render -->
@@ -21,7 +21,7 @@ Columbia FinTech Bootcamp Assignment
 
 ## Overview
 
-A multicurrency wallet deployed with [<code>hd-wallet-derive</code>](https://github.com/dan-da/hd-wallet-derive) and controlled via a Python program. The currencies inlude Test Bitcoin (tBTC) and Ethereum (ETH) running on a private test nework. The connectivity to the test networks is provided by the [bit](https://ofek.dev/bit/) and [web3.py](https://web3py.readthedocs.io/en/stable/) libraries respectively. *This program was set up on Apple M1 Silicon computer, instructions provided below*
+A multicurrency wallet deployed with [<code>hd-wallet-derive</code>](https://github.com/dan-da/hd-wallet-derive) and controlled via a Python program. The currencies include Test Bitcoin (tBTC) and Ethereum (ETH) running on a private test network. The connectivity to the test networks is provided by the [bit](https://ofek.dev/bit/) and [web3.py](https://web3py.readthedocs.io/en/stable/) libraries respectively. *This program was set up on Apple M1 Silicon computer, instructions provided below*
 
 ## Requirements
 
@@ -105,7 +105,7 @@ pip install bit
 
 #### Apple M1 Silicon troubleshooting
 
-Apple Silocon machines use fundamentally different [<code>PEP 517</code>](https://www.python.org/dev/peps/pep-0517/) compilers, requiring a dependancy of <code>bit</code>, [<code>coincurve</code>](https://pypi.org/project/coincurve/) to be compiled from source locally, instead of installing a pre-compiled image:
+Apple Silicon machines use fundamentally different [<code>PEP 517</code>](https://www.python.org/dev/peps/pep-0517/) compilers, requiring a dependency of <code>bit</code>, [<code>coincurve</code>](https://pypi.org/project/coincurve/) to be compiled from source locally, instead of installing a pre-compiled image:
 
 ```bash
 pip uninstall cffi
@@ -115,7 +115,7 @@ pip install bit
 
 ## Derive HD Wallet
 
-[HD Wallets](https://medium.com/cosmostation/the-magic-behind-a-mnemonic-phrase-and-hd-wallets-let-us-explain-43d9c97f6098) enable derivation of determenistic addresses from mnemonic phrases. [<code>hd-wallet-derive</code>](https://github.com/dan-da/hd-wallet-derive) is a python library that supports [BIP32](http://bip32.org/), [BIP39](https://www.blockplate.com/blogs/blockplate/list-of-bip39-wallets-mnemonic-seed), [BIP44](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki), and many more other wallet derivation algorithms.
+[HD Wallets](https://medium.com/cosmostation/the-magic-behind-a-mnemonic-phrase-and-hd-wallets-let-us-explain-43d9c97f6098) enable derivation of deterministic addresses from mnemonic phrases. [<code>hd-wallet-derive</code>](https://github.com/dan-da/hd-wallet-derive) is a python library that supports [BIP32](http://bip32.org/), [BIP39](https://www.blockplate.com/blogs/blockplate/list-of-bip39-wallets-mnemonic-seed), [BIP44](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki), and many more other wallet derivation algorithms.
 
 In this example, a wallet is derived from a mnemonic stored in the [<code>mnemonic</code>](resources/mnemonic.env)
 
@@ -233,7 +233,7 @@ signed = account.sign_transaction(raw_tx)
 ```
 
 
-* <code>sent_tx()</code> - signs and transmits the transaction
+* <code>send_tx()</code> - signs and transmits the transaction
 
     * Transmitting transaction
         * Bitcoin Testnet
@@ -247,12 +247,25 @@ signed = account.sign_transaction(raw_tx)
         w3.eth.sendRawTransaction(signed.rawTransaction)
         ```
         
+    <code>send_tx()</code> takes the following parameters and passes them to <code>create_tx()</code>:
+    
+    ```python
+    account, # bit or web3.py account data type address
+    coin : str, # name of the cryptocurrency/blockchain
+    to : str, # destination address ETH or BTC-TEST
+    amount : float or int, # amount to be sent Ethereum or Bitcoin
+    gas : int = 1 # FOR Ethereum ONLY: gas
+    ```
+    
+    The <code>amount</code> is passed in the units of Bitcoin and Ethereum. <code>create_tx()</code> will convert the values into *Satoshi* and *Wei* respectively, which are the units accepted by the respective blockchains.
+    
+        
         
 ### Examples of processed transactions
 
 * Bitcoin Testnet
 
-Sending a test transaction from the first Bitcoint Testnet address derived from mnemonic (*index* = 0) to the sencond address (*index* = 1):
+Sending a test transaction from the first Bitcoint Testnet address derived from mnemonic (*index* = 0) to the second address (*index* = 1):
 
 ```python
 # Test Bitcoin transaction
@@ -272,7 +285,7 @@ Result:
     
 * Ethereum priveta testnet
 
-Sending a test transaction from the first Ethereum address derived from mnemonic (*index* = 0) to the sencond address (*index* = 1). A local network was deployed using [Ganache](https://www.trufflesuite.com/ganache) using the same mnemonic derived using <code>hd-wallet-derive</code>:
+Sending a test transaction from the first Ethereum address derived from mnemonic (*index* = 0) to the second address (*index* = 1). A local network was deployed using [Ganache](https://www.trufflesuite.com/ganache) using the same mnemonic derived using <code>hd-wallet-derive</code>:
 
 ```python
 # Test Ethereum transaction
@@ -286,15 +299,3 @@ eth_transaction = send_tx(account = eth_acc,
 Result:
 
 ![eth_tx](resources/img/eth_tx-2.png)
-
-
-
-
-
-
-
-
-
-
-
-
