@@ -298,8 +298,5 @@ Ethereum transaction:
 
 Result:
 
-<<<<<<< HEAD
 ![eth_tx](img/eth_tx.png)
-=======
-![eth_tx](resources/img/eth_tx-2.png)
->>>>>>> 43d6108d80611146c33105a79ff8e43f6df80121
+
