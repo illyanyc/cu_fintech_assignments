@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&width=1000&height=200&section=header&text=Wallet%20-%20a%20Multicurrency%20Python%20Blockchain%20&fontSize=30&fontColor=black)
+![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&width=1000&height=200&section=header&text=%20Multicurrency%20HD-Wallet%20in%20Python&fontSize=30&fontColor=black)
 
 
 <!-- header is made with: https://github.com/kyechan99/capsule-render -->
@@ -298,4 +298,8 @@ Ethereum transaction:
 
 Result:
 
+<<<<<<< HEAD
 ![eth_tx](img/eth_tx.png)
+=======
+![eth_tx](resources/img/eth_tx-2.png)
+>>>>>>> 43d6108d80611146c33105a79ff8e43f6df80121
