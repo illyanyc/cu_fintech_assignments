@@ -25,14 +25,14 @@ A multicurrency wallet deployed with [<code>hd-wallet-derive</code>](https://git
 
 ## Requirements
 
-1. [PHP](https://www.php.net/) - general-purpose scripting language that is especially suited to web development
+1. [<code>PHP</code>](https://www.php.net/) - general-purpose scripting language that is especially suited to web development
     * Apple M1 Silicon installation provided below.
 
 2. [<code>hd-wallet-derive</code>](https://github.com/dan-da/hd-wallet-derive) - command-line tool that derives bip32 addresses and private keys for Bitcoin and many altcoins.
 
-3. [bit](https://ofek.github.io/bit/) - Python Bitcoin library
+3. [<code>bit</code>](https://ofek.github.io/bit/) - Python Bitcoin library
 
-4. [web3.py](https://github.com/ethereum/web3.py) - Python library for interacting with Ethereum
+4. [<code>web3.py</code>](https://github.com/ethereum/web3.py) - Python library for interacting with Ethereum
 
 All requirements necessary for running the program are located in the [<code>requirements.txt</code>](resources/requirements.txt) file.
 
