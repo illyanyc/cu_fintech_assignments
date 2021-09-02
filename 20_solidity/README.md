@@ -88,7 +88,7 @@ Deploying the contract:
 
 Initial Ganache account values:
 
-<img src="img\2_balance_before_deployment.png" width=70%>
+<img src="img\1_balance_after_depositing.png" width=70%>
 
 ### Interacting
 
