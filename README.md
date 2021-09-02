@@ -24,6 +24,8 @@ This repo contains all of the assignments from the [Columbia University FinTech 
 | Algorithmic Trading         | [15_algorithmic_trading](https://github.com/illyanyc/cu_fintech_assignments/tree/main/15_algorithmic_trading)|
 | Blockchain Building Blocks  | [18_blockchain](https://github.com/illyanyc/cu_fintech_assignments/tree/main/18_blockchain)                  |
 | Blockchain Python           | [19_blockchain_python](https://github.com/illyanyc/cu_fintech_assignments/tree/main/19_blockchain_python)    |
+| Solidity                    | [20_solidity](https://github.com/illyanyc/cu_fintech_assignments/tree/main/20_solidity)                      |
+| Project 3 - OptionBlock     | [OptionBlock](https://github.com/illyanyc/option-block)                                                      |
 
 ---
 
