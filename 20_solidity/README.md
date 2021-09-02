@@ -56,7 +56,7 @@ The contract is deployed to Ropsten Testnet: <code></code>
 
 Deploying the contract:
 
-![1_deploy](img\1_deploy.png)
+![1_deploy](img/1_deploy.png)
 
 Initial Ganache account values:
 
@@ -84,7 +84,7 @@ The contract is deployed to Ropsten Testnet: <code></code>
 
 Deploying the contract:
 
-![2_deploy](img\2_deploy.png)
+![2_deploy](img/2_deploy.png)
 
 Initial Ganache account values:
 
@@ -112,7 +112,7 @@ The contract is deployed to Ropsten Testnet: <code></code>
 
 Deploying the contract:
 
-![3_deploy](img\3_deploy.png)
+![3_deploy](img/3_deploy.png)
 
 ### Interacting
 
