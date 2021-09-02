@@ -50,7 +50,7 @@ The contract is written in [Solidity](https://docs.soliditylang.org/en/v0.8.7/) 
 
 The <code>[AssociateProfitSplitter](AssociateProfitSplitter.sol)</code> Contract accepts Ether into the contract and divides the Ether evenly among the associate level employees. This allows the Human Resources department to pay employees quickly and efficiently.
 
-The contract was also deployed on the Ropsten testnet <code>0x6d67dDeA749717eB2536C378F160B6Ec8d42f5EC</code>
+The contract was also deployed on the Ropsten testnet <code>[0x6d67dDeA749717eB2536C378F160B6Ec8d42f5EC](https://ropsten.etherscan.io/address/0x6d67dDeA749717eB2536C378F160B6Ec8d42f5EC)</code>
 
 ### Deployment
 
@@ -78,7 +78,7 @@ Final Ganache account values:
 
 <code>[TieredProfitSplitter](TieredProfitSplitter.sol)</code> rather than splitting the profits between Associate-level employees, calculates rudimentary percentages for different tiers of employees (CEO, CTO, and Bob).
 
-The contract was also deployed on the Ropsten testnet <code>0xf0c0880e58b2569654Bf0561B148648f4AEBB773</code>
+The contract was also deployed on the Ropsten testnet <code>[0xf0c0880e58b2569654Bf0561B148648f4AEBB773](https://ropsten.etherscan.io/address/0xf0c0880e58b2569654Bf0561B148648f4AEBB773)</code>
 
 ### Deployment
 
@@ -106,7 +106,7 @@ Final Ganache account values:
 
 <code>[DeferredEquityPlan](DeferredEquityPlan.sol)</code> contract will automatically manage 1000 shares with an annual distribution of 250 over 4 years for a single employee.
 
-The contract was also deployed on the Ropsten testnet <code>0xf76aA28cf22C41925aE717aE456A71C4ec08D084</code>
+The contract was also deployed on the Ropsten testnet <code>[0xf76aA28cf22C41925aE717aE456A71C4ec08D084](https://ropsten.etherscan.io/address/0xf76aA28cf22C41925aE717aE456A71C4ec08D084)</code>
   
 ### Deployment
 
